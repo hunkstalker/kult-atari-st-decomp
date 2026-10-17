@@ -5,14 +5,14 @@ __pycache__/
 .venv/
 
 # Toolchain descargado (setup_toolchain.sh) y salida del build
-matching/toolchain/
+matching/toolchain
 matching/out/
 matching/*.o
 matching/*.prg
 matching/*.rel
 
 # Assets del juego: NO se versionan (copia del usuario; `tools/ingest_data.py`)
-matching/data/
+matching/data
 disks/
 work/disk_a/
 work/disk_b/
