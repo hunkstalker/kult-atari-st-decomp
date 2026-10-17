@@ -1,4 +1,4 @@
-# kult-st — decompilación *matching* de KULT (Atari ST)
+# kult-atari-st-decomp — decompilación *matching* de KULT (Atari ST)
 
 Reconstruye un `KULT.PRG` **byte a byte idéntico** al original de 1989 (Exxos/ERE)
 `sha256 2e85f223167439425ab2096bd21716de135f9b472bde90f4d40e8b0e03132fe6`, **a
