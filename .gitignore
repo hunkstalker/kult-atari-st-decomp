@@ -11,14 +11,8 @@ matching/*.o
 matching/*.prg
 matching/*.rel
 
-# Reconstruccion C (recreate) y kit del arnes diferencial
-recreate/build/
-recreate/*.o
-recreate/*.so
-tools/recreate_kit/oracle/musashi/
-tools/recreate_kit/oracle/build/
-tools/recreate_kit/*.o
-tools/recreate_kit/*.so
+# NOTA: la reimplementacion en C y su arnes viven en su propio repo:
+#   /app/kult-atari-st-c
 
 # Assets del juego: NO se versionan (copia del usuario; `tools/ingest_data.py`)
 matching/data

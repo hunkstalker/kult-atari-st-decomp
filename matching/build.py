@@ -73,7 +73,7 @@ def parse_functions():
 
 def parse_globals():
     out = {}
-    path = os.path.join(ROOT, "projects", "kult", "recreate", "include", "addrs.h")
+    path = os.path.join(ROOT, "matching", "include", "addrs.h")
     if os.path.exists(path):
         for line in open(path):
             m = RE_ADDR.match(line.rstrip())

@@ -60,7 +60,7 @@ def load_namemap():
             if line and not line.startswith("#"):
                 a, n = line.split()[:2]
                 m.setdefault(int(a, 0), n)
-    p = os.path.join(ROOT, "projects", "kult", "recreate", "include", "addrs.h")
+    p = os.path.join(ROOT, "matching", "include", "addrs.h")
     if os.path.exists(p):
         for line in open(p):
             mm = RE_ADDR.match(line.rstrip())

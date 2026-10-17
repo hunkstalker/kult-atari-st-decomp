@@ -5,8 +5,9 @@ Reconstruye un `KULT.PRG` **byte a byte idéntico** al original de 1989 (Exxos/E
 partir de la fuente** (código ASM + tablas de datos transcritas), sin leer el
 binario original en el *build*.
 
-> Proyecto independiente (un repo por decomp). El core/motor nativo multi-versión
-> se construye aparte.
+> **Este repo (A) es solo el decomp en ensamblador (ASM)**: la verdad byte a byte.
+> La **reimplementación en C legible** (a partir de este ASM) vive en un repo
+> aparte: **`/app/kult-atari-st-c`** (proyecto B). Aquí no hay C.
 
 ## Cómo se construye
 
@@ -25,18 +26,19 @@ make indep                      # verifica el build desde git archive HEAD, sin 
 - Los **assets** (sprites, sonido, textos…) se **ingestan** de la copia del
   usuario a `matching/data/` (gitignored; **no se distribuyen**).
 
-## Contenido (fuente canónica del decomp ST)
+## Contenido
 
 - `matching/` — reconstrucción **ASM byte a byte** (código + tablas de datos).
-- `recreate/` — **reconstrucción C** del motor (legible) + **arnés diferencial**
-  (oráculo Musashi; **469 tests**, `make test`).
-- `tools/recreate_kit/` — arnés genérico (GPL-2.0) + oráculo.
+  **Es la especificación** que lee el proyecto C.
+- `tools/` — utilidades del matching (`prg_dis`, `match_check`, `ingest_data`,
+  `gen_data_tables`, …).
 - `docs/` — referencia técnica.
+- `work/` — índice (`decomp.c`) y nombres (`names.txt`); el PRG es gitignored.
 
-> La reconstrucción C está también **copiada** dentro de `kult-port`
-> (`projects/kult/recreate/`), que la usa para su motor nativo. La **fuente
-> canónica es esta**; más adelante kult-port la consumirá por
-> **gitlink/submodule**.
+> **Relación con el proyecto C (B):** B (`/app/kult-atari-st-c`) **parte de este
+> ASM** y escribe la reimplementación en C (fiel en comportamiento, no byte a
+> byte). El intento previo de C (heredado de kult-port) se descartó; el estado de
+> ese análisis queda en `docs/` de B.
 
 ## Documentación
 

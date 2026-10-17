@@ -223,7 +223,7 @@ def build_namemap(fns):
                 a, n = line.split()[:2]
                 NAMEMAP.setdefault(int(a, 0), n)
     # addrs.h (A_ names)
-    p = os.path.join(ROOT, "projects", "kult", "recreate", "include", "addrs.h")
+    p = os.path.join(ROOT, "matching", "include", "addrs.h")
     if os.path.exists(p):
         for line in open(p):
             m = RE_ADDR.match(line.rstrip())
