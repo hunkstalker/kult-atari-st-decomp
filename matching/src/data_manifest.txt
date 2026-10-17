@@ -1,0 +1,8 @@
+# generado por tools/gen_data_tables.py (tablas de punteros en recursos)
+0x199ca   data_0099ca.s   0x4
+0x19eaa   data_009eaa.s   0x260
+0x1a2d2   data_00a2d2.s   0x140
+0x1a4d8   data_00a4d8.s   0x4
+0x1a752   data_00a752.s   0x24
+0x1a7d6   data_00a7d6.s   0x4
+0x1a822   data_00a822.s   0xc

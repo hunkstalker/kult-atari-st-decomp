@@ -1,0 +1,14 @@
+d_00a752:
+A_CLEAR_BUF:
+	dc.l	s_01acc2
+	dc.l	A_DAT_1AB50
+	dc.l	A_MODE_FLAG
+A_DAT_1A75E:
+	dc.l	A_LIST_1A8F0
+A_DAT_1A762:
+	dc.l	A_MODE_TABLE
+	dc.l	A_OBJ_TBL
+	dc.l	A_LIST_1A8F0
+	dc.l	s_01a9d4
+A_ELEM_CLASS:
+	dc.l	A_OBJ_TBL

@@ -1,0 +1,13 @@
+# valor        nombre        tipo
+# tipo: `addr` = direccion (se define como expresion relocalizable, genera reloc);
+#       `const` = constante absoluta (sin reloc).
+# Es la intencion del programador original (fuente), NO la tabla de relocs.
+0x54c8e   RAM54C8E        addr
+0x2ec8a   DESC_BASE       addr
+0x45ad6   DTA             addr
+0x45af0   DTA_LEN         addr
+0x31b76   OVERLAY_B_TBL   addr
+0x31586   OVERLAY_A_TBL   addr
+0x2c534   EXT_BASE        addr
+0x5623    s_15623         const
+0x567d    s_1567d         addr

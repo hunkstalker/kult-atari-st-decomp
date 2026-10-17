@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# Toolchain descargado (setup_toolchain.sh) y salida del build
+matching/toolchain/
+matching/out/
+matching/*.o
+matching/*.prg
+matching/*.rel
+
+# Assets del juego: NO se versionan (copia del usuario; `tools/ingest_data.py`)
+matching/data/
+disks/
+work/disk_a/
+work/disk_b/
+work/*.img
+work/*
+!work/decomp.c
+!work/names.txt

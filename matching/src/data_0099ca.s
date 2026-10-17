@@ -1,0 +1,3 @@
+d_0099ca:
+A_CURSOR_SPRITE_PTR:
+	dc.l	s_01949c

@@ -1,0 +1,186 @@
+{
+  "prg": "work/disk_a/KULT.PRG",
+  "header": {
+    "tlen": 181556,
+    "dlen": 0,
+    "blen": 0,
+    "slen": 0,
+    "absf": 0
+  },
+  "text": {
+    "image_start": 65536,
+    "image_end": 247092
+  },
+  "reloc_count": 2171,
+  "resource_table_file_off": 41700,
+  "resource_table_image_off": 107208,
+  "resources_embedded": [
+    {
+      "name": "SOURI.BIN",
+      "text_off": 38044,
+      "image_addr": 103580,
+      "span_to_next": 636,
+      "size": 636,
+      "followed_by_code_at": null
+    },
+    {
+      "name": "SOUCO.BIN",
+      "text_off": 38680,
+      "image_addr": 104216,
+      "span_to_next": 5664,
+      "size": 5664,
+      "followed_by_code_at": null
+    },
+    {
+      "name": "ZONES.BIN",
+      "text_off": 44344,
+      "image_addr": 109880,
+      "span_to_next": 9418,
+      "size": 9418,
+      "followed_by_code_at": null
+    },
+    {
+      "name": "CARAC.BIN",
+      "text_off": 53762,
+      "image_addr": 119298,
+      "span_to_next": 512,
+      "size": 512,
+      "followed_by_code_at": null
+    },
+    {
+      "name": "TEMPL.BIN",
+      "text_off": 54274,
+      "image_addr": 119810,
+      "span_to_next": 27290,
+      "size": 27290,
+      "followed_by_code_at": null
+    },
+    {
+      "name": "MURSM.BIN",
+      "text_off": 81564,
+      "image_addr": 147100,
+      "span_to_next": 76,
+      "size": 76,
+      "followed_by_code_at": null
+    },
+    {
+      "name": "ANIMA.BIN",
+      "text_off": 81640,
+      "image_addr": 147176,
+      "span_to_next": 2046,
+      "size": 2046,
+      "followed_by_code_at": null
+    },
+    {
+      "name": "ANICO.BIN",
+      "text_off": 83686,
+      "image_addr": 149222,
+      "span_to_next": 668,
+      "size": 668,
+      "followed_by_code_at": null
+    },
+    {
+      "name": "ARPLA.BIN",
+      "text_off": 84354,
+      "image_addr": 149890,
+      "span_to_next": 8028,
+      "size": 8028,
+      "followed_by_code_at": null
+    },
+    {
+      "name": "GAUSS.BIN",
+      "text_off": 92382,
+      "image_addr": 157918,
+      "span_to_next": 2880,
+      "size": 2880,
+      "followed_by_code_at": null
+    },
+    {
+      "name": "ALEAT.BIN",
+      "text_off": 95262,
+      "image_addr": 160798,
+      "span_to_next": 256,
+      "size": 256,
+      "followed_by_code_at": null
+    },
+    {
+      "name": "ICONE.BIN",
+      "text_off": 95518,
+      "image_addr": 161054,
+      "span_to_next": 2756,
+      "size": 2756,
+      "followed_by_code_at": null
+    },
+    {
+      "name": "LUTIN.BIN",
+      "text_off": 98274,
+      "image_addr": 163810,
+      "span_to_next": 2796,
+      "size": 2796,
+      "followed_by_code_at": null
+    },
+    {
+      "name": "SPRIT.BIN",
+      "text_off": 101070,
+      "image_addr": 166606,
+      "span_to_next": 34208,
+      "size": 34208,
+      "followed_by_code_at": null
+    },
+    {
+      "name": "PERSO.BIN",
+      "text_off": 135278,
+      "image_addr": 200814,
+      "span_to_next": 41278,
+      "size": 38120,
+      "followed_by_code_at": 238934
+    },
+    {
+      "name": "MUSIQ.BIN",
+      "text_off": 176556,
+      "image_addr": 242092,
+      "span_to_next": 5000,
+      "size": 5000,
+      "followed_by_code_at": null
+    }
+  ],
+  "resources_external": [
+    {
+      "name": "$$DIALI.BIN",
+      "text_off": 181556
+    },
+    {
+      "name": "DESCI.BIN",
+      "text_off": 191626
+    },
+    {
+      "name": "VERBI.BIN",
+      "text_off": 202118
+    },
+    {
+      "name": "MOTSI.BIN",
+      "text_off": 203638
+    },
+    {
+      "name": "$$PUZZL.BIN",
+      "text_off": 204716
+    },
+    {
+      "name": "BRUIT.BIN",
+      "text_off": 285450
+    },
+    {
+      "name": "$$$$ECHE0.BIN",
+      "text_off": 347278
+    },
+    {
+      "name": "$$SCENA.BIN",
+      "text_off": 1179602500
+    }
+  ],
+  "functions": 406,
+  "code_span": [
+    65536,
+    241276
+  ]
+}
