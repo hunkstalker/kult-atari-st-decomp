@@ -25,6 +25,19 @@ make indep                      # verifica el build desde git archive HEAD, sin 
 - Los **assets** (sprites, sonido, textos…) se **ingestan** de la copia del
   usuario a `matching/data/` (gitignored; **no se distribuyen**).
 
+## Contenido (fuente canónica del decomp ST)
+
+- `matching/` — reconstrucción **ASM byte a byte** (código + tablas de datos).
+- `recreate/` — **reconstrucción C** del motor (legible) + **arnés diferencial**
+  (oráculo Musashi; **469 tests**, `make test`).
+- `tools/recreate_kit/` — arnés genérico (GPL-2.0) + oráculo.
+- `docs/` — referencia técnica.
+
+> La reconstrucción C está también **copiada** dentro de `kult-port`
+> (`projects/kult/recreate/`), que la usa para su motor nativo. La **fuente
+> canónica es esta**; más adelante kult-port la consumirá por
+> **gitlink/submodule**.
+
 ## Documentación
 
 - `matching/README.md` — estado/método.
