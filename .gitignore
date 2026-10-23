@@ -12,7 +12,7 @@ matching/*.prg
 matching/*.rel
 
 # NOTA: la reimplementacion en C y su arnes viven en su propio repo:
-#   /app/kult-atari-st-c
+#   https://github.com/hunkstalker/kult-atari-st-c
 
 # Assets del juego: NO se versionan (copia del usuario; `tools/ingest_data.py`)
 matching/data
