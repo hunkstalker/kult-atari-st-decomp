@@ -2,7 +2,7 @@
 
 **Documento de referencia** (no de estado). Explica **cómo está construido** el
 build que reconstruye `KULT.PRG` byte a byte y **por qué**. Para estado/handoff:
-`matching/README.md`, `matching/RELOCS.md`, `docs/RELEVO.md`. Para el plan:
+`matching/README.md` y `matching/RELOCS.md`. Para el plan:
 `docs/PLAN_MATCHING_DECOMP.md`. Bitácora de toolchain: `docs/MATCHING_BUILD.md`.
 
 > Base de carga del programa: **`0x10000`**. Direcciones "de imagen"
@@ -217,7 +217,7 @@ a campos de instrucción y a posiciones de reloc en datos.
 - **`tools/match_layout.py`** — regenera `layout.json`.
 - `matching/build_vasm.py` imprime por sí solo `relocs derivados por vasm: N
   (original M) iguales: True/False`.
-- Red de seguridad: `projects/kult/recreate && make test` (**469 tests**).
+- Red de seguridad: [`kult-atari-st-c`](https://github.com/hunkstalker/kult-atari-st-c) `make test`.
 
 Nada se da por bueno sin `sha256` idéntico (o bloqueo documentado).
 

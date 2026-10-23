@@ -80,9 +80,9 @@ Detalles verificados:
 ## Comandos
 
 ```sh
-cd /app/kult-port
-python3 matching/build_vasm.py            # PRG byte-idéntico; relocs DERIVADOS
-python3 tools/match_check.py work/disk_a/KULT.PRG matching/out/KULT.PRG
+cd matching
+python3 build_vasm.py                     # PRG byte-idéntico; relocs DERIVADOS
+python3 ../tools/match_check.py ../work/disk_a/KULT.PRG out/KULT.PRG
 # (2171 == 2171, sha256 2e85f223…)
 ```
 

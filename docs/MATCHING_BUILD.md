@@ -56,9 +56,9 @@ más la librería C y las cabeceras. Pasos reproducibles:
 apk add --no-cache gcompat
 
 # 2) traer el toolchain (constructor de TOS 1.x, incluye Alcyon)
-git clone --depth 1 https://github.com/th-otto/tos1x /tmp/opencode/tos1x
-export PATH=/tmp/opencode/tos1x/bin/linux:$PATH
-L=/tmp/opencode/tos1x/lib           # crt0.o, libc.a, libf.a, gem.a
+git clone --depth 1 https://github.com/th-otto/tos1x /tmp/tos1x
+export PATH=/tmp/tos1x/bin/linux:$PATH
+L=/tmp/tos1x/lib           # crt0.o, libc.a, libf.a, gem.a
 
 # 3) compilar (K&R C: sin prototipos ANSI) y enlazar a .PRG
 cc68 -c foo.c -o foo.o
@@ -130,8 +130,8 @@ hay fuente C que reproducir; el original es asm. Lo alcanzable y honesto es:
   fuentes **ASM** (+ datos) que se ensamblen/enlacen a un `KULT.PRG` **byte a
   byte idéntico**. Sigue entregando un árbol fuente verificable y modificable
   (el objetivo real del usuario), solo que en `.s` en vez de `.c`.
-- El C ya reconstruido (`projects/kult/recreate/src/`) queda como **documentación
-  ejecutable** del comportamiento.
+- El C ya reconstruido vive en [`kult-atari-st-c`](https://github.com/hunkstalker/kult-atari-st-c)
+  (`src/`) y queda como **documentación ejecutable** del comportamiento.
 - El **módulo de música `0x3axxx`** y el **crt0/runtime** sí pueden ir en C
   (Alcyon), si se fija la versión exacta de DRI C.
 

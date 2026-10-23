@@ -1,14 +1,21 @@
 # Plan — Decompilación *matching* de Kult (estilo Mario 64)
 
+> **Nota (2026-10-23):** este documento es el **plan histórico** de la
+> decompilación. El C y el arnés se movieron a
+> [`kult-atari-st-c`](https://github.com/hunkstalker/kult-atari-st-c). Las
+> referencias a `projects/kult/recreate`, `src_c/`, `runtime/native`,
+> `PLAN_MULTIVERSION.md` y `AGENTS.md` son históricas y no forman parte de este
+> repositorio.
+
 > **Plan activo (nueva meta de ingeniería).** El objetivo a medio plazo deja de ser
 > solo "port fiel" y pasa a ser **una decompilación *matching***: un árbol de
 > código que, compilado con un toolchain reproducible, produzca un `KULT.PRG`
 > **byte a byte idéntico** al original de 1989. Sobre esa base se hará luego la
-> fusión Atari ST + Amiga (`docs/PLAN_MULTIVERSION.md`).
+> fusión Atari ST + Amiga (plan multi-versión del repo C).
 >
-> Sustituye como **hoja de ruta** a `PLAN_MULTIVERSION.md` **solo en la meta**;
+> Sustituye como **hoja de ruta** al plan multi-versión **solo en la meta**;
 > el multi-versión se conserva y se apoya en este (ver §5). Las reglas de trabajo
-> de `AGENTS.md` siguen vigentes para todo.
+> del repo C siguen vigentes para todo.
 
 ## RESULTADO (2026-10-16) — PRG byte-idéntico
 
@@ -36,7 +43,7 @@ Se considerará conseguido cuando exista:
    - **mismo SHA-256** que `work/disk_a/KULT.PRG`.
 2. **Cobertura 100 % del segmento `text`**: cada byte generado por fuente (C o
    ASM) del repo, **sin funciones "no reconstruidas"** y sin parches al binario.
-3. La suite diferencial actual (**469 tests**) sigue **verde** (red de seguridad).
+3. La suite diferencial del repo C sigue **verde** (red de seguridad).
 4. Documentación mínima: mapa de fuente por módulo, nombres razonables y cómo se
    construye (nuevo `docs/MATCHING_BUILD.md`).
 
@@ -47,7 +54,7 @@ Se considerará conseguido cuando exista:
   `0x10b6c`, `0x11026`, `0x110da`, `0x12590`, `0x1478a`, `0x14798`, `0x15b94`,
   `0x1652e`, `0x18316`, `0x18f0c` (varias son envoltorios/colas).
 - **10 sin reconstruir:** `_start` (portado aparte en
-  `runtime/native/kult_native_start.c`), 3 artefactos de Ghidra
+  el arranque nativo del repo C), 3 artefactos de Ghidra
   (`0x11e7a`/`0x11ec4` = cuerpo/cola de `0x11e5e`; `0x135ba` = 4 B de datos) y
   las **6 del FDC** (`0x19316`/`0x1935a`/`0x193e4`/`0x19438`/`0x19462`/`0x19474`),
   excluidas hasta hoy.
@@ -131,7 +138,7 @@ Nuevo árbol (nombres provisionales):
 
 ```
 matching/
-├── src_c/        reconstrucción C (puede reutilizar projects/kult/recreate/src)
+├── kult-atari-st-c/src/  reconstrucción C (repo aparte)
 ├── src_asm/      ASM reconstruido (blitters, música, FDC, crt0…)
 ├── include/      cabeceras de la época (osbind/gemdefs) + addrs.h
 ├── lib/          crt0 + librería C mínima equivalente
@@ -185,13 +192,13 @@ tools/match_check.py   comparador de PRG (tamaño, bytes, relocs, diff con conte
 ## 5. Encaje con la fusión Atari ST + Amiga
 
 La metodología *matching* es la mejor base para el plan multi-versión
-(`docs/PLAN_MULTIVERSION.md`):
+(plan multi-versión del repo C):
 
 - El **oráculo** ya no es solo Musashi-ST: el binario Amiga es un **segundo
   oráculo**; la misma técnica diferencial por función sirve para reconstruir la
   lógica Amiga y **detectar divergencias reales** entre versiones (donde el
   código difiere, no se asume: se mide).
-- Los **recursos por ID lógico** (`PLAN_MULTIVERSION.md` §0.3) siguen aplicando:
+- Los **recursos por ID lógico** (plan multi-versión del repo C §0.3) siguen aplicando:
   el *matching* fija el "vanilla ST"; Amiga aporta arte/audio/paleta.
 - El objetivo final del usuario (un Kult nativo que una ambas versiones) se
   construye **sobre** un core ST demostrado byte a byte, no en paralelo.
@@ -204,7 +211,7 @@ La metodología *matching* es la mejor base para el plan multi-versión
 | R2 | Tramo en ASM a mano que no deriva a C | Transcribir a `.s` (normal en matching). |
 | R3 | Datos embebidos con layout exacto | M1; diff sistemático por bloques. |
 | R4 | Código autogenerado / overlays / tablas calculadas | Detección con el desensamblador; tratar como datos. |
-| R5 | Alcance enorme; presión por "cerrar" | Mantener intacta la red de 469 tests y avanzar por fases con *gate* en M0. |
+| R5 | Alcance enorme; presión por "cerrar" | Mantener intacta la red de tests del repo C y avanzar por fases con *gate* en M0. |
 
 **Regla de oro:** ningún avance se da por bueno sin que el binario generado
 coincida byte a byte (o se documente el bloqueo). Igual que F4 fijó.
@@ -218,20 +225,19 @@ coincida byte a byte (o se documente el bloqueo). Igual que F4 fijó.
 Pendiente:
 
 - **M7 / producto:** usar este core ST como canónico y abordar AMIGA
-  (`docs/PLAN_MULTIVERSION.md`).
+  (plan multi-versión del repo C).
 - **Opcional:** derivación *pura* de las relocs sin sembrar con los destinos del
   original (`matching/RELOCS.md` §"Trabajo futuro").
 
 ## 8. Comandos de referencia
 
 ```sh
-cd /app/kult-port
-# desensamblado del crt0 / una función (base imagen + 0x10000):
-python3 tools/prg_dis.py work/disk_a/KULT.PRG --start $((0x10000-0x10000+28)) --len 240 --base 0x10000
-# suite diferencial (red de seguridad):
-cd projects/kult/recreate && make test          # 469
-# censo de código:
-python3 tools/code_map.py && python3 tools/test_code_map.py
+# desde la raíz del repo
+python3 tools/ingest_data.py --prg work/disk_a/KULT.PRG
+cd matching
+make vasm
+make check
+make indep
 ```
 
 ## 9. Meta: árbol de fuentes autocontenido (independencia del PRG)

@@ -81,7 +81,7 @@ fn 0x106f8 load_resource_list        # ctx: recorre entradas terminadas en '$' y
 fn 0x1682a reset_clear               # ctx: bucle A:CLEAR.BIN + the_command=0x918e
 
 # ==== F4: nucleos C verificados byte a byte (harness diferencial) ====
-# Los nombres del prefijo `g_` viven en projects/kult/recreate/src/.
+# Los nombres del prefijo `g_` viven en kult-atari-st-c/src/.
 fn 0x16300 xbios_setpalette          # XBIOS Setpalette(*(0x1a466))
 fn 0x14138 run_text_entry            # lee entrada de script A6, calcula pantalla y blitea texto
 fn 0x11050 text_blit_fwd             # blit de texto directo (A0/A1/A3/D2/D3/D7)
