@@ -102,8 +102,7 @@ make check    # compara out/KULT.PRG con el original
 El `as68` de `tos1x` tiene un **bug de fase** con el programa completo
 (`illegal relative address` en ramas cortas) y rechaza pseudo-instrucciones que
 caen sobre datos; el `as68` original **segfaultea** en Linux. `vasm` es portable,
-correcto y **emite la tabla DRI** que necesitamos. `build_objs.py` (build
-multi-objeto con `as68`) queda como histórico.
+correcto y **emite la tabla DRI** que necesitamos.
 
 ## 4. Árbol de fuentes
 
@@ -116,7 +115,6 @@ matching/
 ├── autogen.py               fragmentos auto desde el desensamblado
 ├── build.py                 compone out/kult.s + mide/verifica regiones
 ├── build_vasm.py            build byte-idéntico (va al PRG final)
-├── build_objs.py            histórico (as68 multi-objeto)
 ├── src/
 │   ├── manifest.txt         fragmentos MANUALES: <addr> <fichero>
 │   ├── symbols.txt          <addr> <nombre> de datos con reloc

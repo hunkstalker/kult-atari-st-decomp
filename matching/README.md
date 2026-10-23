@@ -108,6 +108,5 @@ assets con copyright ni binarios del juego.
   arriba). La tabla de relocs la **genera vasm**; no se copia del original. **No**
   regenera autogen por defecto (`--regen` en dev).
 
-`build_objs.py` (intento multi-objeto con as68) queda como histórico.
 `verify_independent.sh` = B3 (build sin el PRG).
 
